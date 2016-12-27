@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     Container,
     Header,
@@ -7,14 +7,22 @@ import {
     Footer,
     FooterTab,
     Button
-} from 'native-base';
-import CharacterList from '../CharacterList';
+} from 'native-base'
+
+import {
+    Platform
+} from 'react-native'
+
+import CharacterList from '../CharacterList'
 import HouseList from '../HouseList'
-import myTheme from '../../themes/theme';
+import theme from '../../themes/theme'
+import {Icon} from "native-base"
 
 const CHARACTERS = 'characters'
 const HOUSES = 'houses'
-
+const platform = (Platform.OS === 'ios') ? 'ios' : 'md'
+const profileIcon = platform + "-person"
+const homeIcon = platform + "-home"
 class HomePage extends Component {
 
     constructor(props){
@@ -26,7 +34,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <Container theme={myTheme}>
+            <Container theme={theme}>
                 <Header>
                         <Title>Game Of Thrones</Title>
                 </Header>
@@ -38,11 +46,13 @@ class HomePage extends Component {
                         <Button
                             active={this.state.selectedTab == CHARACTERS}
                             onPress={() => this.showCharacters()}>
+                            <Icon name={platform+'-person'} />
                             Characters
                         </Button>
                         <Button
                             active={this.state.selectedTab == HOUSES}
                             onPress={() => this.showHouses()}>
+                            <Icon name={platform+'-home'} />
                             Houses
                         </Button>
                     </FooterTab>
