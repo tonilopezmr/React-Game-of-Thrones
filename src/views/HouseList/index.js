@@ -3,9 +3,9 @@ import {ScrollView, Text, Container} from 'react-native';
 import CharacterItem from '../../components/CharacterItem';
 import {connect} from 'react-redux';
 
-class CharacterList extends Component {
+class HouseList extends Component {
     renderCharacterList() {
-        return this.props.characters.map((character) => {
+        return this.props.houses.map((character) => {
             return (
                 <CharacterItem key={character.name} character={character} />
             )
@@ -15,10 +15,7 @@ class CharacterList extends Component {
     render() {
         return(
             <ScrollView>
-                {!this.props.characters.length == 0 ?
-                    this.renderCharacterList() :
-                    <Spinner />
-                }
+                {this.renderCharacterList()}
             </ScrollView>
         )
     }
@@ -26,8 +23,8 @@ class CharacterList extends Component {
 
 function mapStateToProps(state) {
     return {
-        characters: state.characters.list
+        houses: state.houses.list
     }
 }
 
-export default connect(mapStateToProps)(CharacterList);
+export default connect(mapStateToProps)(HouseList);

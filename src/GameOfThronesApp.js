@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
+'use strict'
+
+import React, { Component } from 'react'
 import {
     AppRegistry,
     StyleSheet,
     Navigator
-} from 'react-native';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {Provider, connect} from 'react-redux';
-import {Router} from 'react-native-router-flux';
+} from 'react-native'
+import {createStore, applyMiddleware, compose} from 'redux'
+import {Provider, connect} from 'react-redux'
+import {Router} from 'react-native-router-flux'
 
-import reducers from './reducers';
-import AppScenes from './Scenes';
+import reducers from './reducers'
+import AppScenes from './Scenes'
 
-const RouterWithRedux = connect()(Router);
+const RouterWithRedux = connect()(Router)
 const middleware = [];
-const store = compose(applyMiddleware(...middleware)(createStore)(reducers));
+const store = compose(applyMiddleware(...middleware)(createStore)(reducers))
 
 export default class GameOfThrones extends Component {
     render() {
@@ -27,4 +29,4 @@ export default class GameOfThrones extends Component {
     }
 }
 
-AppRegistry.registerComponent('GameOfThrones', () => GameOfThrones);
+AppRegistry.registerComponent('GameOfThrones', () => GameOfThrones)

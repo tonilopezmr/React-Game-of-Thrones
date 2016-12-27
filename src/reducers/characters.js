@@ -125,7 +125,7 @@ export default characters = [
         description: "Oberyn Martell is the youngest brother of Doran Martell. He is a hot-headed, forceful, and lustful man with a quick wit and a barbed tongue. He is a formidable fighter and is called the Red Viper because it is rumored he poisons his weapons. He has traveled the world, founded a mercenary company, and briefly studied at the Citadel, which trains Maesters. He has eight illegitimate daughters, collectively known as the Sand Snakes. He was very close to his older sister Elia, and seeks revenge for her death.",
         houseImageUrl: "https://s3-eu-west-1.amazonaws.com/npatarino/got/martell.jpg",
         houseId: "a22fd891",
-        houseName: ""
+        houseName: "House Martell"
     },
     {
         name: "Cersei Lannister",
