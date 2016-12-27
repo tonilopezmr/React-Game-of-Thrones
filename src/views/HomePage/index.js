@@ -21,8 +21,7 @@ import {Icon} from "native-base"
 const CHARACTERS = 'characters'
 const HOUSES = 'houses'
 const platform = (Platform.OS === 'ios') ? 'ios' : 'md'
-const profileIcon = platform + "-person"
-const homeIcon = platform + "-home"
+
 class HomePage extends Component {
 
     constructor(props){
