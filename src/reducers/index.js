@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import charactersReducer from './character.reducer';
-import housesReducer from './houses.reducer'
+import charactersReducer from '../characters/reducers';
+import housesReducer from '../houses/reducers';
 import routerReducer from './router.reducer';
 
 const rootReducer = combineReducers({

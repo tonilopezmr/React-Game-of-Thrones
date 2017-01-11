@@ -1,7 +1,7 @@
-import characters from './characters';
+import characters from '../../characters';
 
 function getHouse(houseId, houseName, houseImageUrl) {
-    if (houseId == "" && houseName == "" && houseImageUrl == ""){
+    if (houseId == "" && houseName == "" && houseImageUrl == "") {
         return undefined
     }
 
@@ -18,7 +18,7 @@ var getHouses = function () {
         character.houseImageUrl));
     const result = [];
     dupHouses.forEach(house => {
-        if(house && !result.find((h) => h.id == house.id)) result.push(house)
+        if (house && !result.find((h) => h.id == house.id)) result.push(house)
     })
     return result
 }
@@ -28,7 +28,7 @@ const initialState = {
     activeCharacter: null
 };
 
-export default function housesReducer(state=initialState, action) {
+export default function housesReducer(state = initialState, action) {
     switch (action.type) {
         case "LIST_HOUSES":
             return Object.assign({}, null, {list: action.payload})
