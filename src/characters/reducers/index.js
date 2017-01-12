@@ -7,7 +7,7 @@ const initialState = {
   activeCharacter: null
 };
 
-export default function charactersReducer(state = initialState, action) {
+const charactersReducer = (state = initialState, action) => {
   switch (action.type) {
     case LIST_CHARACTERS:
       return Object.assign({}, null, {list: action.payload})
@@ -15,3 +15,5 @@ export default function charactersReducer(state = initialState, action) {
       return state
   }
 }
+
+export default charactersReducer
