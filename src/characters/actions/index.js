@@ -1,6 +1,8 @@
-export const SELECT_CHARACTER = 'SELECT_CHARACTER';
+import characters from '../../characters'
 
-export const selectCharacter = (char) => ({
-  type: SELECT_CHARACTER,
-  payload: char
+export const LIST_CHARACTERS = 'LIST_CHARACTERS'
+
+export const fetchCharacters = () => ({
+  type: LIST_CHARACTERS,
+  response: characters
 })

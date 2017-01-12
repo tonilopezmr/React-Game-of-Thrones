@@ -3,6 +3,15 @@ import {ScrollView, Text, Container} from 'react-native';
 import Item from './Item';
 
 class List extends Component {
+  componentWillMount() {
+    this.fetchData()
+  }
+
+  fetchData() {
+    const {fetch} = this.props
+    fetch()
+  }
+
   renderList(list) {
     return list.map((item) => {
       return (

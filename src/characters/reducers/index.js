@@ -1,16 +1,12 @@
-import characters from '../../characters';
+import {LIST_CHARACTERS} from '../actions'
 
-export const LIST_CHARACTERS = 'LIST_CHARACTERS'
-
-const initialState = {
-  list: characters,
-  activeCharacter: null
-};
-
-const charactersReducer = (state = initialState, action) => {
+const charactersReducer = (state = [], action) => {
   switch (action.type) {
     case LIST_CHARACTERS:
-      return Object.assign({}, null, {list: action.payload})
+      return [
+        ...state,
+        action.response
+      ]
     default:
       return state
   }
