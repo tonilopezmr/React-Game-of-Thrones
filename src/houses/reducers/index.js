@@ -28,9 +28,11 @@ const initialState = {
   activeCharacter: null
 };
 
+export const LIST_HOUSES = 'LIST_HOUSES'
+
 const housesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LIST_HOUSES":
+    case LIST_HOUSES:
       return Object.assign({}, null, {list: action.payload})
     default:
       return state
