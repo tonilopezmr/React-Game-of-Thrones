@@ -1,6 +1,6 @@
 import React from "react";
 import {Scene} from "react-native-router-flux";
-import HomePage from "./containers/HomePage";
+import HomePage from "./HomePage";
 
 const Scenes = (
     <Scene key="root">

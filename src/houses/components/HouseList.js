@@ -1,30 +1,9 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, Container} from 'react-native';
-import CharacterItem from '../../characters/components/CharacerItem';
 import {connect} from 'react-redux';
+import List from '../../common/components/List'
 
-class HouseList extends Component {
-  renderCharacterList() {
-    return this.props.houses.map((character) => {
-      return (
-        <CharacterItem key={character.name} character={character} />
-      )
-    })
-  }
+const mapStateToProps = (state) => ({
+  list: state.houses.list
+})
 
-  render() {
-    return(
-      <ScrollView>
-        {this.renderCharacterList()}
-      </ScrollView>
-    )
-  }
-}
-
-function mapStateToProps(state) {
-  return {
-    houses: state.houses.list
-  }
-}
-
-export default connect(mapStateToProps)(HouseList);
+export default connect(mapStateToProps)(List);
