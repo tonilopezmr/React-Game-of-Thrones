@@ -6,13 +6,6 @@ import {connect} from 'react-redux';
 import styles from './styles';
 
 class Item extends Component {
-  static propTypes = {
-    character: PropTypes.object
-  }
-
-  static contextTypes = {
-    routes: PropTypes.object.isRequired
-  };
 
   render() {
     const {
@@ -29,8 +22,4 @@ class Item extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  characters: state.characters
-})
-
-export default connect(mapStateToProps)(Item);
+export default connect()(Item);

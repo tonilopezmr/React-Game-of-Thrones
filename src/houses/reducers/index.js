@@ -3,10 +3,7 @@ import {LIST_HOUSES} from '../actions'
 const housesReducer = (state = [], action) => {
   switch (action.type) {
     case LIST_HOUSES:
-      return [
-        ...state,
-        action.response
-      ]
+      return action.response
     default:
       return state
   }
