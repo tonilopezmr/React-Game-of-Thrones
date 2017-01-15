@@ -10,7 +10,8 @@ import {
 } from 'native-base'
 
 import {
-  Platform
+  Platform,
+  StyleSheet
 } from 'react-native'
 
 import CharacterList from '../characters/components/CharacterList'
@@ -40,7 +41,7 @@ class HomePage extends Component {
         <Content>
           {this.renderSelectedTab()}
         </Content>
-        <Footer>
+        <Footer style={styles.footer}>
           <FooterTab>
             <Button
               active={this.state.selectedTab == CHARACTERS}
@@ -87,3 +88,9 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+
+const styles = StyleSheet.create({
+  footer: {
+    backgroundColor: '#000000'
+  }
+});

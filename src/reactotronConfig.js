@@ -1,5 +1,5 @@
 import Reactotron from "reactotron-react-native";
-import { reactotronRedux } from 'reactotron'
+import { reactotronRedux } from 'reactotron-redux'
 
 Reactotron
   .configure({name: 'GameOfThrones'})
