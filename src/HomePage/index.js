@@ -41,7 +41,7 @@ class HomePage extends Component {
         <Content>
           {this.renderSelectedTab()}
         </Content>
-        <Footer style={styles.footer}>
+        <Footer>
           <FooterTab>
             <Button
               active={this.state.selectedTab == CHARACTERS}
@@ -88,9 +88,3 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
-const styles = StyleSheet.create({
-  footer: {
-    backgroundColor: '#000000'
-  }
-});

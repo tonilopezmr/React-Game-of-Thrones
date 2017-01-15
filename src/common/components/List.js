@@ -1,6 +1,20 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, Container} from 'react-native';
+import {
+  ScrollView,
+  Text,
+  View,
+  Button,
+  ToastAndroid,
+  Platform
+} from 'react-native';
+
+import {
+
+  Spinner
+} from 'native-base'
+
 import Item from './Item';
+import log from '../../log'
 
 class List extends Component {
   componentWillMount() {
@@ -21,9 +35,49 @@ class List extends Component {
   }
 
   render() {
+    const {
+      list,
+      isFetching,
+      error
+    } = this.props
+    log(this.props)
+
+    if (isFetching && !list.length) {
+      return (
+        <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Spinner color='#FFB74D'/>
+        </View>)
+    }
+
+    if (error) {
+      if (!list.length) {
+        return (
+          <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+            <Text>{'Oopss one error :/'}</Text>
+            <Button
+              onPress={() => this.fetchData()}
+              title='Retry'
+              color='#FFB74D'
+            />
+          </View>)
+      } else {
+        if (Platform.OS !== 'ios') {
+          ToastAndroid.show('Oopss one error :/', ToastAndroid.SHORT)
+        }
+      }
+    }
+
     return (
       <ScrollView>
-        {this.renderList(this.props.list)}
+        {this.renderList(list)}
       </ScrollView>
     )
   }

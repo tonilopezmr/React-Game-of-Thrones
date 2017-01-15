@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import charactersReducer from '../characters/reducers';
+import characters from '../characters/reducers';
 import housesReducer from '../houses/reducers';
 
 const rootReducer = combineReducers({
     houses: housesReducer,
-    characters: charactersReducer,
+    characters
 });
 
 export default rootReducer;

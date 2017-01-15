@@ -106,7 +106,7 @@ export default {
 
     // Footer
     footerHeight: 55,
-    footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+    footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#000000',
 
 
     //FooterTab
@@ -231,4 +231,5 @@ export default {
     inputLineHeight: 24,
     jumbotronBg: '#C9C9CE',
     jumbotronPadding: 30
+
 }
