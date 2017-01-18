@@ -42,5 +42,6 @@ export const fetchCharacters = () =>
 export const fetchHouses = () =>
   delay(700)
     .then(() => {
+      randomError()
       return getHouses()
     })

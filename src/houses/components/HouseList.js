@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import List from '../../common/components/List'
-import {fetchHouses} from '../actions'
+import * as actions from '../actions'
 
 const mapStateToProps = (state) => ({
-  list: state.houses
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  fetch: () => dispatch(fetchHouses())
+  list: state.houses.list,
+  isFetching: state.houses.isFetching,
+  error: state.houses.error
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  actions
 )(List);
