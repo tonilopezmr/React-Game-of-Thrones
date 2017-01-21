@@ -1,2 +1,2 @@
 import "./src/reactotronConfig";
-import Application from './src/GameOfThronesApp';
+import Application from './src/GameOfThronesApp'

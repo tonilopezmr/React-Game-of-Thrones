@@ -14,7 +14,7 @@ import {
   StyleSheet
 } from 'react-native'
 
-import CharacterList from '../characters/components/CharacterList'
+import CharacterList from '../characters/list/components/CharacterList'
 import HouseList from '../houses/components/HouseList'
 import theme from '../themes/theme'
 import {Icon} from "native-base"

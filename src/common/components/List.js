@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import {
-
   Spinner
 } from 'native-base'
 
@@ -26,10 +25,10 @@ class List extends Component {
     fetch()
   }
 
-  renderList(list) {
+  renderList(list, onItemClick) {
     return list.map((item) => {
       return (
-        <Item key={item.name} item={item}/>
+        <Item key={item.name} item={item} onItemClick={onItemClick}/>
       )
     })
   }
@@ -38,7 +37,8 @@ class List extends Component {
     const {
       list,
       isFetching,
-      error
+      error,
+      onItemClick
     } = this.props
     log(this.props)
 
@@ -77,7 +77,7 @@ class List extends Component {
 
     return (
       <ScrollView>
-        {this.renderList(list)}
+        {this.renderList(list, onItemClick)}
       </ScrollView>
     )
   }

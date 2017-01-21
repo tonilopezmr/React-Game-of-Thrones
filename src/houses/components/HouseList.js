@@ -6,7 +6,8 @@ import * as actions from '../actions'
 const mapStateToProps = (state) => ({
   list: state.houses.list,
   isFetching: state.houses.isFetching,
-  error: state.houses.error
+  error: state.houses.error,
+  onItemClick: () => {}
 })
 
 export default connect(
